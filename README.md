@@ -96,14 +96,12 @@ This ensures you never hold one leg of an arb open — that would be directional
 
 ## Screenshots
 
-> Add screenshots once you've captured them. Suggested placeholders:
+<img width="1360" height="566" alt="Screenshot 2026-03-18 at 9 29 28 PM" src="https://github.com/user-attachments/assets/824e7ec4-aba8-41c9-93e5-b2b03c8616c3" />
+<img width="1428" height="664" alt="Screenshot 2026-03-18 at 9 30 29 PM" src="https://github.com/user-attachments/assets/5c5b2d97-84f9-4137-a0bc-a1fbdc10589d" />
+<img width="1435" height="665" alt="Screenshot 2026-03-18 at 9 30 39 PM" src="https://github.com/user-attachments/assets/a544099f-762a-4a92-b933-f8d5dd3e5ff0" />
+<img width="1421" height="662" alt="Screenshot 2026-03-18 at 9 30 53 PM" src="https://github.com/user-attachments/assets/867cd955-9de3-435e-ad29-fb396b35c23c" />
 
-| Page | Description |
-|------|-------------|
-| **[Home](/)** | Market table with YES/NO prices, opportunity feed, manual scan trigger |
-| **[Dashboard](/dashboard)** | Agent status (ON/OFF), mode toggle, budget meter, live arb feed |
-| **[Tracker](/tracker)** | Execution history, realized P&L, status per arb |
-| **[Analytics](/analytics)** | Cumulative P&L chart, fill rate %, profit breakdown |
+
 
 ---
 
