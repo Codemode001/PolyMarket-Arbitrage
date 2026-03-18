@@ -1,0 +1,22 @@
+Files created:                                                                                                                             
+                                                                                                                                             
+  ┌───────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────┐  
+  │               File                │                                           What it does                                            │  
+  ├───────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤  
+  │ src/lib/polymarket/types.ts       │ Market, MarketsResponse, OrderBook, OrderBookLevel, PolymarketToken types matching CLOB API       │  
+  ├───────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤  
+  │ src/lib/polymarket/client.ts      │ getMarkets() (paginates up to 500 active markets) + getOrderBook(tokenId)                         │  
+  ├───────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤  
+  │ src/app/api/markets/sync/route.ts │ POST — calls getMarkets(), upserts into markets table keyed on condition_id                       │  
+  ├───────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤  
+  │ src/lib/risk/limits.ts            │ canPlaceBet(amount) — checks daily_budget, daily_spent, arb_max_per_trade; recordSpend(amount) —  │
+  │                                   │ increments daily_spent                                                                            │  
+  ├───────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ src/app/page.tsx                  │ Dark terminal-style market table with YES/NO/Combined/Volume/End Date columns. ARB badge          │  
+  │                                   │ highlights rows where combined < 98.5¢. Sync button calls the POST route                          │  
+  └───────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                                                                                                             
+  Key design decisions:                                                                                                                    
+  - Home page reads from Supabase (fast) — sync is triggered manually via the button, not on every load
+  - getMarkets() paginates via next_cursor and caps at 500 to prevent hanging syncs                                                          
+  - Combined price column already flags arb opportunities in green with an ARB badge — useful for Phase 2
